@@ -1,10 +1,8 @@
 body{
     font-family: 'Roboto', sans-serif;
     font-size: 17px;
-    margin:0 15px;
+    margin:0 7px;
     width:100%;
-    font-weight: 300;
-
 }
 
 a{
@@ -13,22 +11,21 @@ a{
     color:black
 }
 
-h1,h2,h3,h4{
+h1,h4{
     font-family: 'Shrikhand', cursive;
     text-align: left;
+}
+
+.container{
+    max-width : 1440px;
+    margin : 0 auto; 
 }
 
 /*en tête*/
 
 header{
-    margin-top: 2px;
-    margin-left: 5px;
     display: flex;
     flex-direction: column;
-}
-
-#logo_t{
-    
 }
 
 .img_head{
@@ -44,21 +41,29 @@ header{
 
 form, input {
     background-color: #f2f2f2;
+    border:none;
+    outline: none;
 }
 
 form{
     height: 368px;
+    border-top: 1px solid darkgrey;
 }
 
 #location_form{
     border: none;
     border-top: 2px;
+    margin-left: 5px;
     background-color: transparent;
-    font-size: 18px;   
+    font-size: 15px; 
+    font-weight: bold;  
+    color:#000000;
 }
 
 #search{
-    margin: 5px 0px 10px 10px;
+    width: 110%;
+    margin-left: -7px;
+    margin-top: 5px;
 }
 
 
@@ -76,17 +81,19 @@ form{
 
 .header_text{
     margin-top: 12%;
+    padding: 10px;
     text-align: center;
 }
 
 .font_title{
-    font-size: 28px;
+    font-size: 22px;
     margin-left: 3%;
+    margin-right: 5%;
     font-weight: bold;
 }
 
 .header_text p{
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 3%;
     padding-right: 5px;
 }
@@ -97,20 +104,24 @@ button{
     border-radius: 28px;
     width: 70%;
     height: 54px;
+    box-shadow: 1px 1px 8px darkgrey;
+    transition: filter 3s,box-shadow 4s;
+}
+
+button:hover{
+    filter: brightness(1.75);
+    box-shadow: 3px 3px 10px black;
 }
 
 .search_phone{
     color: white;
-    margin-left: 55px;
+    margin-left: 57px;
     margin-top:5% ;
+    cursor: pointer;
 }
 
 .search_phone b{
-    font-size: 18px;
-}
-
-.search_desktop{
-    display: none;
+    font-size: 16px;
 }
 
 /*fonctionnement*/
@@ -134,16 +145,22 @@ button{
     border:none;
     border-radius: 18px;
     height: 65px;
+    width:85%;
     display: inline-flex;
-    margin-left: 11px;
+    margin-left: 20px;
     margin-bottom: 10%;
-    box-shadow: 4px 4px 15px #e6e6e6;
+    box-shadow: 4px 4px 15px darkgrey;
+    transition: background-color 3s;
+}
+
+#function_3{
+    background-color:#f5edff;
 }
 
 .order{
     display: flex;
     margin-left: 20px;
-    margin-top: 25px ;  
+    margin-top: 22px ;  
 }
 
 .function_numbers{
@@ -159,17 +176,32 @@ button{
 .function_text{
     padding-left: 24px;
     font-weight: bold;
+    font-size: 17px;
 }
 
 aside i{
     color: grey;
+    margin-top: 2px;
+}
+
+aside #function_3 i{
+    color:#9356DC;
 }
 
 /*liste des restaurants*/
 
 main{
     background-color: #f2f2f2;
-    width: 100%;
+    width: 110%;
+    margin-left: -7px;
+}
+
+
+h2{
+    margin-left: 20px;
+    padding-top: 50px;
+    font-weight: bold;
+    font-size: 22px;
 }
 
 #resto_display{
@@ -179,17 +211,19 @@ main{
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 4px;
+    margin-left: 2px;
 }
 
 .resto_card{
     width: 90%;
     height: 200px;
     margin-bottom: 25px;
-    margin-left: 13px;
+    margin-left: 18px;
     padding-bottom: 27px;
     background-color: white;    
     border-radius: 17px;
     box-shadow: 4px 4px 6px #e6e6e6;
+    position: relative;
 }
 
 
@@ -204,21 +238,17 @@ main{
 .new{
     position: absolute;
     right: 18px;
+    top:4px;
     color: rgb(5, 121, 84);
     background:#99E2D0;
     margin-top: 3%;
     border-radius: 4px;
     padding: 8px 15px;
     font-weight: bold;
+    font-size: 16px;
     z-index: 2;
 }
 
-
-
-.card_display{
-    display: flex;
-    justify-content: space-between;
-}
 .card_text{
     padding-bottom: 0px;
     margin-left: 3%;
@@ -227,16 +257,194 @@ main{
 .card_text h3{
     margin-top: 8px;
     margin-bottom: 0px;
+    font-size: 19px;
 }
 
 .card_text p{
-    margin-top: 4px;
+    margin-top: 2px;
+    font-size: 16px;
 }
 
 .favoris{
+    position: relative;
     
 }
 
 .fa-heart{
+    position: absolute;
+    right:20px;
+    bottom:33px;
     font-size: 28px ;
 }
+
+.fill_heart{
+    display:none;
+}
+
+.fa-heart::before{ 
+    transition: color 1s ease-out;
+}
+
+.fa-heart:active::before{
+    font-weight: bold;
+    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+    color:transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke:unset; 
+}
+
+/*pied de page*/
+
+footer{
+    background-color: rgba(33, 33, 33, 0.945);
+    height: 230px;
+    width: 110%;
+    margin-left:-7px;
+}
+
+.foot_column{
+    margin-left: 10px;
+}
+.foot_column a{
+    color:white;
+    font-size:16px;
+} 
+
+.foot_column li{
+    margin-top: 3%;
+}
+
+.foot_column ul{
+    list-style: none;
+    margin-top: 5px;
+    padding-top: 3px;
+    padding-left: 25px;
+}
+
+.logo_footer{
+    font-size: 18px;
+    font-weight: 300;
+    color: white;
+    margin-top: 0px;
+    margin-left: 28px;
+    padding-top: 22px;
+}
+
+.foot_column i{
+    font-size: 14px;
+    margin-right: 9px;
+}
+
+/*media queries tablette*/
+
+@media screen and (min-width: 768px){
+
+body{
+    width:91% ;
+}
+
+#search{
+    width: 109%;
+}
+
+.search_phone{
+    margin-left: 106px;
+}
+
+main{
+    width: 109%;
+}
+
+.new{
+    right: 79px;
+}
+
+footer{
+    width: 109%;
+}
+}
+
+
+/*media queries ordinateur*/
+
+@media screen and (min-width: 992px) {
+
+body{
+    width: 93%;
+}
+
+#search{
+    width: 107%;
+}
+
+#logo_t{
+    margin-top: 6%;
+    margin-left: 10%;
+} 
+
+#search.container{
+    margin-top: 7%;
+}
+
+.header_text{
+    margin-top: 6%;
+}
+
+.search_phone{
+    margin-left: 143px;
+}
+
+button:hover{
+    filter: brightness(1.75);
+    box-shadow: 3px 3px 10px black;
+}
+
+aside {
+    margin-top: 6%;
+    margin-left: 20px;
+}
+
+#fonctionnement{
+    width: 98%;
+}
+
+.function{
+    margin-bottom: 8%;
+}
+
+main{
+    width: 107%;
+}
+
+h2{
+    padding-top: 35px;
+    font-size: 25px;
+}
+
+.fa-heart:hover{
+    font-weight: bold;
+    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+    color:transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke:unset; 
+}
+
+.new{
+    right:107px;
+}
+
+footer{
+    width: 107%;
+}
+
+.logo_footer{
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+
+}
+
+/*loading spinner*/
+/*nom du site*/
