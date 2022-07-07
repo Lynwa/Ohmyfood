@@ -113,9 +113,10 @@ button:hover{
 
 .search_phone{
   color: white;
-  margin-left: 57px;
+  margin : 0 auto;
   margin-top:5% ;
   cursor: pointer;
+  display: block;
 }
 
 .search_phone b{
@@ -643,7 +644,6 @@ footer{
 }
 
 .search_phone{
-  margin-left: 151px;
   width: 65%;
 }
 
@@ -716,7 +716,6 @@ form{
 }
   
 .search_phone{
-  margin-left: 323px;
   width: 60%;
 }
   
@@ -789,7 +788,7 @@ h2{
 }
   
   .new{
-  right:107px;
+  right:7%;
 } 
 
 footer{

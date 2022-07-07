@@ -33,6 +33,9 @@ header{
     background-color: white;
     padding: 15px;
     margin-right: -7px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
 }
 
 header i{
@@ -41,7 +44,6 @@ header i{
 
 .header__img{
     width: 40%;
-    margin-left: 25%;
 }
 
 /*flêche de retour au menu d'acceuil*/
