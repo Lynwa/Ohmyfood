@@ -4,19 +4,28 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width"/>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="X"/>
+        <link rel="stylesheet" href="normalize.css"/>
         <script src="https://kit.fontawesome.com/a1f26d7245.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="restaurant_1.css"/>
         <title>La note enchantée</title>
     </head>
 
     <body>
-        <div class="loader"></div>
+        <div class="loader">
+            <div class="spin"></div>
+            <div class="spinner_text">
+                <div class= "moving_text">
+                    <p class="loading_text">OhMyFood
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="homepage">
         <div class="background">
 
 <!--logo et retour page d'accueil-->
             <header>  
-                <a href="_CALONNE_Lauriane_1_index.html"><i class="fa-solid fa-arrow-left"></i></a>
+                <a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
                     <img class="header__img" src="ressources/ohmyfood.png" alt="OhMyFood logo">
                     
             </header>
@@ -24,65 +33,70 @@
             
             <main class="main__background">
 
-<!--titre restaurant-->
+    <!--titre restaurant-->
                 <div class="restaurant__title">
                     <h1 class="restaurant__name">La note enchantée</h1>
                     <i id="restaurant__heart" class="fa-regular fa-heart"></i>
                 </div>
 
-<!--les plats-->
+    <!--les plats-->
                 <form>
                     <fieldset>
                         <legend>Entrées</legend>
                         <div class="choice__name choice__animation-1">
                             <label class="choice__name--details">
                                 <input type="radio" id="entree_1" name="starter">
-                                <div for="entree_1" class="choice__name--bold">Ravioles de foie gras
-                                    <div class="choice__name--regular">Accompagnés de leur crème à truffe</div>
-                                    <div class="choice__name--price">25€</div>
-                                </div>
-                                <div class="detail">
-                                    <div class="choice__name--icone"><i class="fa-solid fa-check"></i></div>
-                                </div>    
+                                <span class="display">
+                                    <span class="choice__name--bold">Ravioles de foie gras</span>
+                                    <span class="choice__name--regular">Accompagnés de leur crème à truffe</span>
+                                    
+                                </span>
+                                <span class="detail">
+                                    <span class="choice__name--price">25€</span>
+                                    <span class="choice__name--icone"><i class="fa-solid fa-check"></i></span>
+                                </span>    
                             </label>
                         </div>     
                         
                         <div class="choice__name choice__animation-2">
                             <label class="choice__name--details">
                                 <input type="radio" id="entree_2" name="starter">
-                                <div for="entree_2" class="choice__name--bold"> Caviar osciètre
-                                    <div class="choice__name--regular">Sur blini à la farine de blé noir</div>
-                                    <div class="choice__name--price">35€</div>
-                                </div>
-                                <div class="detail">                                
-                                    <div class="choice__name--icone"><i class="fa-solid fa-check"></i></div>
-                                </div>
+                                <span class="display">
+                                    <span class="choice__name--bold"> Caviar osciètre</span>
+                                    <span class="choice__name--regular">Sur blini à la farine de blé noir</span>
+                                </span>    
+                                <span class="detail">
+                                    <span class="choice__name--price">35€</span>                                                                
+                                    <span class="choice__name--icone"><i class="fa-solid fa-check"></i></span>
+                                </span>
                             </label>
                         </div>    
 
                         <div class="choice__name choice__animation-3">
                             <label class="choice__name--details">
                                 <input type="radio" id="entree_3" name="starter">
-                                <div for="entree_3" class="choice__name--bold"> Homard et espuma de potiron
-                                    <div class="choice__name--regular">Mariné aux zestes d'orange</div>
-                                    <div class="choice__name--price">20€</div>
-                                </div>
-                                <div class="detail">                                
-                                    <div class="choice__name--icone"><i class="fa-solid fa-check"></i></div>
-                                </div>    
+                                <span class="display">
+                                    <span class="choice__name--bold"> Homard et espuma de potiron</span>
+                                    <span class="choice__name--regular">Mariné aux zestes d'orange</span>
+                                </span>    
+                                <span class="detail">
+                                    <span class="choice__name--price">20€</span>                                                               
+                                    <span class="choice__name--icone"><i class="fa-solid fa-check"></i></span>
+                                </span>    
                             </label>
                         </div>    
 
                         <div class="choice__name choice__animation-4">
                             <label class="choice__name--details">
                                 <input type="radio" id="entree_4" name="starter">
-                                <div for="entree_4" class="choice__name--bold"> Foie gras de canard cuit entier
-                                    <div class="choice__name--regular">Confiture de figue et pain toasté</div>
-                                    <div class="choice__name--price">35€</div>
-                                </div>
-                                <div class="detail">
-                                    <div class="choice__name--icone"><i class="fa-solid fa-check"></i></div>
-                                </div>    
+                                <span class="display">
+                                    <span class="choice__name--bold"> Foie gras de canard cuit entier</span>
+                                    <span class="choice__name--regular">Confiture de figue et pain toasté</span>
+                                </span>    
+                                <span class="detail">
+                                    <span class="choice__name--price">35€</span>                                
+                                    <span class="choice__name--icone"><i class="fa-solid fa-check"></i></span>
+                                    </span>    
                             </label>
                         </div>
 
@@ -96,39 +110,42 @@
                         <div class="choice__name choice__animation-5">
                             <label class="choice__name--details">
                                 <input type="radio" id="plat_1" name="main_course">
-                                <div for="plat_1" class="choice__name--bold">Noix de coquilles Saint-Jacques
-                                    <div class="choice__name--regular">Sur lit de purée de céléri-rave</div>
-                                    <div class="choice__name--price">40€</div>
-                                </div>
-                                <div class="detail">                                
-                                    <div class="choice__name--icone"><i class="fa-solid fa-check"></i></div> 
-                                </div>           
+                                <span class="display">
+                                    <span class="choice__name--bold">Noix de coquilles Saint-Jacques</span>
+                                    <span class="choice__name--regular">Sur lit de purée de céléri-rave</span>
+                                </span>    
+                                <span class="detail">   
+                                    <span class="choice__name--price">40€</span>                                                             
+                                    <span class="choice__name--icone"><i class="fa-solid fa-check"></i></span> 
+                                </span>           
                             </label>
                         </div> 
                         
                         <div class="choice__name choice__animation-6">
                             <label class="choice__name--details">
                                 <input type="radio" id="plat_2" name="main_course">
-                                <div for="plat_2" class="choice__name--bold"> Langoustine poêlée
-                                    <div class="choice__name--regular">Purée de patate douce</div>
-                                    <div class="choice__name--price">35€</div>
-                                </div>
-                                <div class="detail">                                
-                                    <div class="choice__name--icone"><i class="fa-solid fa-check"></i></div>
-                                </div>    
+                                <span class="display">
+                                    <span class="choice__name--bold"> Langoustine poêlée</span>
+                                    <span class="choice__name--regular">Purée de patate douce</span>
+                                </span>    
+                                <span class="detail">
+                                    <span class="choice__name--price">35€</span>                                                              
+                                    <span class="choice__name--icone"><i class="fa-solid fa-check"></i></span>
+                                </span>    
                             </label>
                         </div>    
 
                         <div class="choice__name choice__animation-7">
                             <label class="choice__name--details">
                                 <input type="radio" id="plat_3" name="main_course">
-                                <div for="plat_3" class="choice__name--bold"> Mijotée de queue de boeuf
-                                    <div class="choice__name--regular"> Et riz sauvage aix zestes de citron</div>
-                                    <div class="choice__name--price">44€</div>
-                                </div>
-                                <div class="detail">                                
-                                    <div class="choice__name--icone"><i class="fa-solid fa-check"></i></div>
-                                </div>
+                                <span class="display">
+                                    <span class="choice__name--bold"> Mijotée de queue de boeuf</span>
+                                    <span class="choice__name--regular"> Et riz sauvage aux zestes de citron</span>
+                                </span>    
+                                <span class="detail"> 
+                                    <span class="choice__name--price">44€</span>                                                          
+                                    <span class="choice__name--icone"><i class="fa-solid fa-check"></i></span>
+                                </span>
                             </label>
                         </div>
 
@@ -142,84 +159,84 @@
                         <div class="choice__name choice__animation-8">
                             <label class="choice__name--details">
                                 <input type="radio" id="dessert_1" name="dessert">
-                                <div for="dessert_1" class="choice__name--bold">Macarons noisette et chocolat
-                                    <div class="choice__name--regular">Glace au caramel brun et sel de Guérande</div>
-                                    <div class="choice__name--price">18€</div>
-                                </div>
-                                <div class="detail">                                
-                                    <div class="choice__name--icone"><i class="fa-solid fa-check"></i></div>
-                                </div>    
+                                <span class="display">
+                                    <span class="choice__name--bold">Macarons noisette et chocolat</span>
+                                    <span class="choice__name--regular">Glace au caramel brun et sel de Guérande</span>
+                                    
+                                </span>
+                                <span class="detail">    
+                                    <span class="choice__name--price">18€</span>                           
+                                    <span class="choice__name--icone"><i class="fa-solid fa-check"></i></span>
+                                </span>    
                             </label> 
                         </div>
                         
                         <div class="choice__name choice__animation-9">
                             <label class="choice__name--details">
                                 <input type="radio" id="dessert_2" name="dessert">
-                                <div for="dessert_2" class="choice__name--bold"> Baba au rhum revisité
-                                    <div class="choice__name--regular">Avec son coulis de citron</div>
-                                    <div class="choice__name--price">22€</div>
-                                </div>
-                                <div class="detail">                                
-                                    <div class="choice__name--icone"><i class="fa-solid fa-check"></i></div>
-                                </div>
+                                <span class="display">
+                                    <span class="choice__name--bold"> Baba au rhum revisité</span>
+                                    <span class="choice__name--regular">Avec son coulis de citron</span>
+                                </span>    
+                                <span class="detail">
+                                    <span class="choice__name--price">22€</span>                                                               
+                                    <span class="choice__name--icone"><i class="fa-solid fa-check"></i></span>
+                                </span>
                             </label>
                         </div>
 
                         <div class="choice__name choice__animation-10">
                             <label class="choice__name--details">
                                 <input type="radio" id="dessert_3" name="dessert">
-                                <div for="dessert_3" class="choice__name--bold"> Tarte au citron meringuée
-                                    <div class="choice__name--regular"> Déstructurée</div>
-                                    <div class="choice__name--price">23€</div>
-                                </div>
-                                <div class="detail">                                
-                                    <div class="choice__name--icone"><i class="fa-solid fa-check"></i></div>
-                                </div>
+                                <span class="display">
+                                    <span class="choice__name--bold"> Tarte au citron meringuée</span>
+                                    <span class="choice__name--regular"> Déstructurée</span>
+                                </span>    
+                                <span class="detail">
+                                    <span class="choice__name--price">23€</span>                                                                
+                                    <span class="choice__name--icone"><i class="fa-solid fa-check"></i></span>
+                                </span>
                             </label>
                         </div>
 
                     </fieldset>
                 </form>            
                 
-                <div>
+                <div id="order">
                     <a href="#"></a>
                     <button class="order__button">Commander</button>
                 </div>
-                
+                    
             </main>
 
-<!--pied de page-->
-<footer>
-    <section>
-        <div class="foot__column">
-            <h1 class="logo__footer"> Ohmyfood </h1>
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-utensils"></i>Proposer un restaurant
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-handshake-angle"></i>Devenir partenaire
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">Mention légales</a>
-                    </li>
-                    <li>
-                        <a href="mailto:ohmyfood@gmail.com">Contact</a>
-                    </li>
+    <!--pied de page-->
+            <footer>
+                <section>
+                    <div class="foot__column">
+                        <h4 class="logo__footer"> Ohmyfood </h4>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-utensils"></i>Proposer un restaurant
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-handshake-angle"></i>Devenir partenaire
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">Mention légales</a>
+                                </li>
+                                <li>
+                                    <a href="mailto:ohmyfood@gmail.com">Contact</a>
+                                </li>
 
-                </ul>
-        </div>
-    </section>            
-</footer>       
-        </div>    
-            <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-            <script type="text/javascript">
-            $(window).load(function() {
-            $(".loader").fadeOut("1000"); })
-            </script>
-        </body>
+                            </ul>
+                    </div>
+                </section>            
+            </footer>       
+            </div>    
+            </div>   
+    </body>
 </html>
