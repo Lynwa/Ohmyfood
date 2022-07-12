@@ -1,190 +1,851 @@
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width"/>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="normalize.css"/>
-        <script src="https://kit.fontawesome.com/a1f26d7245.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="index_style.css"/>
-        <title>OhMyFood !</title>
-    </head>
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  margin:0px;
+  width:100%;
+}
 
-    <body>
-        <!--page de chargement-->
-        <div class="loader">
-            <div class="spin"></div>
-            <div class="spinner_text">
-                <div class= "moving_text">
-                    <p class="loading_text">OhMyFood
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="homepage">
-         
-        <!-- entête-->
-        <header>
-            <div id="logo_t">
-                <a class="img_head" href="#">
-                <img class="head_img" src="ressources/ohmyfood.png" alt="OhMyFood">
-                </a>
-            </div>    
-           
+a{
+  background-color: transparent;
+  text-decoration: none;
+  color:black
+}
 
-        <!--recherche-->
-            <div id="search" class="container">
+h1,h4{
+  font-family: 'Shrikhand', cursive;
+  text-align: left;
+}
 
-                <form>
-                    <div class="search_text">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <input type="text" id="location_form" placeholder="Paris, Belleville">
-                        <label class="visually_hidden" for="localisation_des_restaurants">Tapez la localisation du restaurant</label>
-                        <input class="visually_hidden" type="text" id="localisation_des_restaurants">
-                    </div>
-                    <div class="header_text">
-                        <div class="font_title">Réservez le menu qui vous convient </div>
-                        <p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-                    </div>
-                    <button class="search_phone" type="submit"><b>Explorer nos restaurants</b></button>
+.container{
+  margin : 0 auto; 
+}
 
-                </form>
-            </div>    
-        
-            <aside>
-                <p class="font_title" id="fonctionnement">Fonctionnement</p>
-                    <div class="liste_function">
-                        <div id="function_1" class="function">
-                            <span class="function_numbers">1</span>
-                            <div class="order">
-                                <i class="fa-solid fa-mobile-screen-button"></i>
-                                <div class="function_text">Choisissez un restaurant</div>
-                            </div>
-                        </div>
-                        <div id="function_2" class="function">
-                            <span class="function_numbers">2</span>
-                            <div class="order">
-                                <i class="fa-solid fa-list"></i>
-                                <div class="function_text">Composez votre menu</div>
-                            </div>
-                        </div>
-                        <div id="function_3" class="function">
-                            <span class="function_numbers">3</span>
-                            <div class="order">
-                                <i class="fa-solid fa-store"></i>
-                                <div class="function_text">Dégustez au restaurant</div>
-                            </div>
-                        </div>
-                    </div>
-            </aside>
-        
-        </header> 
+/*en tête*/
+header{
+  display: flex;
+  flex-direction: column;
+}
 
-        <main>
-            <!--Liste des restaurants--> 
-            <div>
-                <h2>Restaurants</h2>
-                <div id="resto_display">
+.img_head{
+  margin:20px 10px 0px 28px;
+}
 
-                    <article class="resto_card">
-                        <a class="card_link" href="#">                   
-                            <div class="new">Nouveau</div>
-                            <img class="resto_img" src="ressources/la_palette.jpg" alt="La palette du goût">
-                        </a>   
-                            <div class="card_display">
-                                <div class="card_text">
-                                    <h3>La palette du goût</h3>
-                                    <p>Ménilmontant</p>
-                                </div>
-                        
-                                <div class="favoris">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fill_heart" class="fa-solid fa-heart"></i>                                
-                                </div>    
-                            </div>    
-                        
-                    </article>
-                    <article class="resto_card">
-                        <a class="card_link" href="restaurant_1.html">                    
-                            <div class="new">Nouveau</div>
-                            <img class="resto_img" src="ressources/la_note.jpg" alt="La note enchantée">
-                        </a>
-                            <div class="card_display">
-                                    <div class="card_text">
-                                    <h3>La note enchantée</h3>
-                                    <p>Charonne</p>
-                                </div>
-                        
-                                <div class="favoris">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fill_heart" class="fa-solid fa-heart"></i>
-                                </div>    
-                            </div>
-                        
-                    </article>
-                    <article class="resto_card">
-                        <a class="card_link" href="#">                    
-                            <img class="resto_img" src="ressources/la_francaise.jpg" alt="À la française">
-                        </a>                        
-                            <div class="card_display">
-                                <div class="card_text">
-                                    <h3>A la française</h3>
-                                    <p>Cité rouge</p>
-                                </div>
-                            
-                                <div class="favoris">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fill_heart" class="fa-solid fa-heart"></i>
-                                </div>
-                            </div>    
-                        
-                    </article>
-                    <article class="resto_card">
-                        <a class="card_link" href="#">                    
-                            <img class="resto_img" src="ressources/le_delice.jpg" alt="Le délice des sens">
-                        </a>                        
-                            <div class="card_display">
-                                <div class="card_text">
-                                <h3>Le délice des sens</h3>
-                                <p>Folie-Méricourt</p>
-                                </div>
-                            
-                                <div class="favoris">
-                                    <i class="fa-regular fa-heart"></i>
-                                    <i class="fill_heart" class="fa-solid fa-heart"></i>
-                                </div>
-                            </div>    
-                        
-                    </article>
-                </div>
+.head_img{
+  margin-left:19%;
+  width: 50%;
+  padding-top: 20px;
+  padding-bottom: 4px; 
+}
 
-            </div>
-        </main>    
-    <footer>
-        <section>
-            <div class="foot_column">
-                <h1 class="logo_footer"> Ohmyfood </h1>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <i class="fa-solid fa-utensils"></i>Proposer un restaurant
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa-solid fa-handshake-angle"></i>Devenir partenaire
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">Mention légales</a>
-                        </li>
-                        <li>
-                            <a href="mailto:ohmyfood@gmail.com">Contact</a>
-                        </li>
+form, input {
+  background-color: #f2f2f2;
+  border:none;
+  outline: none;
+}
 
-                    </ul>
-            </div>
-        </section>            
-    </footer>       
-    </div>       
-    </body>
+form{
+  height: 368px;
+  border-top: 1px solid darkgrey;
+}
+
+#location_form{
+  border: none;
+  border-top: 2px;
+  margin-left: 5px;
+  background-color: transparent;
+  font-size: 15px; 
+  font-weight: bold;  
+  color:#000000;
+}
+
+#search{
+  width: 105%;
+  margin-left: -10px;
+  margin-top: 5px;
+}
+
+
+.visually_hidden{
+  position: absolute;
+  left: -999px;
+}
+
+.search_text{
+  font-size: 17px;
+  text-align: center;
+  padding: 12px 0px 12px 88px;
+  background-color: rgba(210, 209, 209, 0.775);
+}
+er
+.header_text{
+  margin-top: 12%;
+  padding: 10px;
+  text-align: center;
+}
+
+.font_title{
+  font-size: 22px;
+  margin-left: 3%;
+  margin-right: 5%;
+  font-weight: bold;
+}
+
+.header_text p{
+  font-size: 16px;
+  margin-left: 3%;
+  padding-right: 5px;
+}
+
+button{
+  border: none;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  border-radius: 28px;
+  width: 70%;
+  height: 54px;
+  box-shadow: 1px 1px 8px darkgrey;
+  transition: filter 3s,box-shadow 4s;
+}
+
+button:active{
+  filter: brightness(1.75);
+  box-shadow: 3px 3px 10px black;
+  font-weight: bold;   
+  color: black;
+}
+
+.search_phone{
+  color: white;
+  margin : 0 auto;
+  margin-top:5% ;
+  cursor: pointer;
+  display: block;
+}
+
+.search_phone b{
+  font-size: 16px;
+}
+
+/*fonctionnement*/
+#fonctionnement{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  margin-left: 18px;
+}
+
+.liste_function{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  vertical-align: middle;
+}
+
+.function{
+  background-color: #f2f2f2;
+  border:none;
+  border-radius: 18px;
+  height: 65px;
+  width:85%;
+  display: inline-flex;
+  margin-left: 20px;
+  margin-bottom: 10%;
+  box-shadow: 4px 4px 15px darkgrey;
+  transition: background-color 3s;
+}
+
+#function_3{
+  background-color:#f5edff;
+}
+
+.order{
+  display: flex;
+  margin-left: 20px;
+  margin-top: 22px ;  
+}
+
+.function_numbers{
+  background-color: #9356DC;
+  color: white;
+  border-radius: 50px;
+  padding:10px 16px 12px 16px;
+  margin-bottom: 12px;
+  margin-left: -13px;
+  margin-top: 12px;
+}
+
+.function_text{
+  padding-left: 24px;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+aside i{
+  color: grey;
+  margin-top: 2px;
+}
+
+aside #function_3 i{
+  color:#9356DC;
+}
+
+/*liste des restaurants*/
+main{
+  background-color: #f2f2f2;
+  width: 102%;
+  margin-left: -6px;
+}
+
+
+h2{
+  margin-left: 23px;
+  padding-top: 45px;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#resto_display{
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  margin-left: 2px;
+}
+
+.resto_card{
+  width: 90%;
+  height: 200px;
+  margin-bottom: 25px;
+  margin-left: 18px;
+  padding-bottom: 27px;
+  background-color: white;    
+  border-radius: 17px;
+  box-shadow: 4px 4px 6px #e6e6e6;
+  position: relative;
+}
+
+
+.resto_img{
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 13px 13px 0px 0px;
+  z-index: 1;
+}
+
+.new{
+  position: absolute;
+  right: 18px;
+  top:4px;
+  color: rgb(5, 121, 84);
+  background:#99E2D0;
+  margin-top: 3%;
+  border-radius: 4px;
+  padding: 8px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.card_text{
+  padding-bottom: 0px;
+  margin-left: 3%;
+}
+
+.card_text h3{
+  margin-top: 8px;
+  margin-bottom: 0px;
+  font-size: 19px;
+}
+
+.card_text p{
+  margin-top: 2px;
+  font-size: 16px;
+}
+
+.favoris{
+  position: relative;  
+}
+
+.fa-heart{
+  position: absolute;
+  right:20px;
+  bottom:33px;
+  font-size: 28px ;
+}
+
+.fill_heart{
+  display:none;
+}
+/*
+.fa-heart::before{ 
+  transition: heart 10s ease-out both;
+  -webkit-transition: heart 10s ease-out both;
+}
+*/
+.fa-heart:active::before{
+  font-weight: bold;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color:transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke:unset; 
+}
+
+/*animation coeur*/
+@-webkit-keyframes heart {
+  from{background-color: #cf94f7;}
+  to{background-color: #2980b9;}
+}
+
+@keyframes heart {
+  from{background-color: #cf94f7;}
+  to{background-color: #2980b9;}
+}
+
+/*pied de page*/
+
+footer{
+  background-color: rgba(33, 33, 33, 0.945);
+  height: 230px;
+  width: 110%;
+  margin-left:-7px;
+}
+
+.foot_column{
+  margin-left: 10px;
+}
+.foot_column a{
+  color:white;
+  font-size:16px;
+} 
+
+.foot_column li{
+  margin-top: 3%;
+}
+
+.foot_column ul{
+  list-style: none;
+  margin-top: 5px;
+  padding-top: 3px;
+  padding-left: 25px;
+}
+
+.logo_footer{
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+  margin-top: 0px;
+  margin-left: 28px;
+  padding-top: 22px;
+}
+
+.foot_column i{
+  font-size: 14px;
+  margin-right: 9px;
+}
+
+
+/*loading spinner*/
+.loader{
+  background: white;    
+  margin-top: 650px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-animation: hide-loadingpage 0s 3s both;
+  animation: hide-loadingpage 0s 3s both;
+  position: absolute;
+  transform: translateY(-100%);
+  }
+    
+.spin{
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    color: #9356DC;
+}
+    
+.spin:before,
+.spin:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: spin 3s linear infinite;
+}
+
+.spin:after {
+  color: #FF79DA;
+  transform: rotateY(70deg);
+  animation-delay: .4s;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+  }
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+  }
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
+  }
+  }    
+
+.loading_text {
+  font-family: "Shrikhand", Arial, "Arial Black", Impact, "Times New Roman", sans-serif;
+  position: absolute;
+  top: 40px;
+  right: -50px;
+  display: -webkit-box;
+  display: flex;
+  font-size: 30px;
+  }
+    
+.moving_text{
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: absolute;
+  -webkit-animation: colortext 1s 0.7s infinite;
+  animation: colortext 1s 0.7s infinite
+}
+    
+/*animation "Ohmyfood" en couleurs*/
+@-webkit-keyframes colortext {
+  0% {
+    color: rgb(93, 220, 236);
+  }
+  10% {
+    color: #cf94f7;
+  }
+  20% {
+    color: #6ad1bc;
+  }
+  30% {
+    color: #fca368;
+  }
+  40% {
+    color: rgb(7, 223, 223);
+  }
+  50% {
+    color: #67b1fc;
+  }
+  1% {
+    color: rgb(159, 159, 255);
+  }
+  70% {
+    color: #2980b9;
+  }
+  80% {
+    color: #e2d396;
+  }
+  90% {
+    color: #9ab929;
+  }
+  100% {
+    color: rgb(255, 129, 150);
+  }
+}
+@keyframes colortext {
+  0% {
+    color: rgb(93, 220, 236);
+  }
+  10% {
+    color: #cf94f7;
+  }
+  20% {
+    color: #6ad1bc;
+  }
+  30% {
+    color: #fca368;
+  }
+  40% {
+    color: rgb(7, 223, 223);
+  }
+  50% {
+    color: #67b1fc;
+  }
+  1% {
+    color: rgb(159, 159, 255);
+  }
+  70% {
+    color: #2980b9;
+  }
+  80% {
+    color: #e2d396;
+  }
+  90% {
+    color: #9ab929;
+  }
+  100% {
+    color: rgb(255, 129, 150);
+  }
+}
+
+/*page d'accueil cachée*/
+  .homepage {
+      width: 100%;
+      overflow: hidden;
+      -webkit-animation: hide-homepage 1s 3s both;
+      animation: hide-homepage 1s 3s both;
+    }
+    
+    @-webkit-keyframes hide-homepage {
+      0% {
+        opacity: 0;
+      }
+      1% {
+        opacity: 0.6;
+      }
+      70% {
+        opacity: 0.7;
+      }
+      80% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0.9;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes hide-homepage {
+      0% {
+        opacity: 0;
+      }
+      1% {
+        opacity: 0.6;
+      }
+      70% {
+        opacity: 0.7;
+      }
+      80% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0.9;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+/*loader caché*/
+    @-webkit-keyframes hide-loadingpage {
+      0% {
+        opacity: 1;
+      }
+      20% {
+        opacity: 0.6;
+      }
+      70% {
+        opacity: 0;
+      }
+      80% {
+        opacity: 0.4;
+      }
+      85% {
+        opacity: 0.3;
+      }
+      90% {
+        opacity: 0.1;
+      }
+      95% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    @keyframes hide-loadingpage {
+      0% {
+        opacity: 1;
+      }
+      20% {
+        opacity: 0.6;
+      }
+      70% {
+        opacity: 0;
+      }
+      80% {
+        opacity: 0.4;
+      }
+      85% {
+        opacity: 0.3;
+      }
+      90% {
+        opacity: 0.1;
+      }
+      95% {
+        opacity: 0.1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+/*media queries tablette*/
+@media screen and (min-width: 768px){
+.img_head{
+  margin-left: 40px;
+}
+
+#search{
+  width:102%
+}
+
+.search_text{
+  font-size: 18px;
+  margin-left: -10px;
+}
+
+.header_text{
+  margin-top: 10%;
+}
+
+.search_phone{
+  width: 65%;
+}
+
+#fonctionnement{
+  margin-top: 30px;
+}
+
+.function{
+  margin-bottom: 6%;
+  margin-left: 25px;
+}
+
+main{
+  margin-left: 0px;
+}
+
+#resto_display{
+  margin-left: 14px;
+}
+
+footer{
+  width: 101%;
+}
+
+.logo_footer{
+  font-size: 19px;
+}
+
+.foot_column ul{
+  padding-top: 0px;
+}
+
+.foot_column li{
+  margin-top: 20px;
+}
+
+.loader{
+  margin-top:900px;
+}
+
+.spin{
+  width: 250px;
+  height: 250px;
+}
+
+.loading_text {
+  top: 60px;
+  font-size: 50px;
+  margin-right: 49px;
+}
+  }
+
+/*media queries ordinateur*/ 
+@media screen and (min-width: 992px) {   
+#logo_t{
+  margin-top: 4%;
+  margin-left: 10%;
+} 
+
+#search.container{
+  margin-top: 3%;
+}
+
+form{
+  width: 100%;
+} 
+
+.header_text{
+  margin-top: 4%;
+}
+  
+.search_phone{
+  width: 60%;
+  margin-top: 2%;
+}
+  
+button:hover{
+  filter: brightness(1.75);
+  box-shadow: 3px 3px 10px black;
+  font-weight: bold;   
+  color: black;
+}
+  
+aside {
+  margin-top: 3%;
+  margin-left: 17px;
+}
+  
+#fonctionnement{
+  width: 98%;
+  margin-bottom: 35px;
+}
+
+.font_title{
+  font-size: 28px;
+}
+
+.liste_function{
+  margin-left: 8px;
+}
+
+.function{
+  margin-bottom: 35px;
+}
+  
+main{
+  width: 100%;
+  border-radius: 23px;
+}
+ 
+h2{
+  padding-top: 35px;
+  font-size: 28px;
+  margin-left: 44px;
+}
+
+#resto_display{
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 6%;
+  padding-bottom: 30px;
+}
+
+.resto_card{
+  width: 40%;
+  height: 200px;
+  margin-left: 67px;
+  margin-right: 48px;
+  padding-bottom: 20px;
+}
+
+.resto_card:hover{
+  transform: scale(1.1);
+}
+
+.fa-heart:hover{
+  font-weight: bold;
+  /*background: linear-gradient(to bottom right, #FF79DA, #9356DC);*/
+  animation: heart 2000ms;
+  color:transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke:unset; 
+}
+
+.new{
+  right:7%;
+} 
+
+footer{
+  width: 101%;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.logo_footer{
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+
+.foot_column ul{
+  padding-bottom: 2px;
+}
+
+.foot_column li{
+  margin-top: 2%;
+}
+
+.foot_column li:hover {
+  font-weight: bold; 
+}
+
+.loader{
+  margin-top:850px ;
+}
+
+.spin{
+  width: 350px;
+  height: 350px;
+}
+
+.loading_text {
+  top: 80px;
+  right: -70px;
+  font-size: 70px;
+}
+  }
+  
